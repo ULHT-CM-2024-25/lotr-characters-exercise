@@ -1,15 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:lotr_characters/pages/characters_list_page.dart';
-import 'package:lotr_characters/repository/characters_repository.dart';
-import 'package:provider/provider.dart';
-
-import 'http/http_client.dart';
 
 void main() {
-  runApp(Provider(
-    create: (_) => CharactersRepository(client: HttpClient()),
-    child: const MyApp(),
-  ));
+  // TODO passar a usar o Provider para injetar um CharactersRepository
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -19,12 +12,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'LOTR Characters',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: CharactersListPage(),
+      home: Placeholder(),
     );
   }
 }

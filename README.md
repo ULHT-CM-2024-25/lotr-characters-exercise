@@ -38,14 +38,15 @@ Deves desenvolver a aplicação tendo em conta estes pressupostos, até que ela:
 * Passe os testes (unitários e integração) mas também o [dart analyze](https://dart.dev/tools/dart-analyze) que pode ser executado localmente através do comando `dart analyze` na consola do Android Studio
 
 Este exercício pressupõe que sabes o que são testes de integração, sabes usar o Provider bem como consumir uma API REST. Se ainda não o fizeste,
-vê o vídeo [Consumir uma API em flutter (LOTR) - 3](https://youtu.be/2ocHgcOILD8?si=RAH6tySna01xdWu0).
+vê o vídeo [Consumir uma API em flutter (LOTR) - 3](https://youtu.be/2ocHgcOILD8?si=RAH6tySna01xdWu0) da [playlist LOTR](https://www.youtube.com/watch?v=x0tIkh1vb7k&list=PLGtUp9f8b5M2hktI5znPykHod2zl5td8g&ab_).
 
 ## Dicas técnicas
-
 Todos os dados necessários para o desenvolvimento desta aplicação estão disponíveis [nesta API](https://the-one-api.dev).
 
 Os títulos dos ecrãs / páginas devem ser colocados num widget `Text` dentro de uma `AppBar`.
 
-O texto "name - race" deve ser implementado através do método `toString` da classe `Character`.
+O texto "name - race" (ambos atributos da classe `Character`) deve ser implementado através do método `toString` da classe `Character`.
+
+A classe `Quote` deve ter apenas 2 atributos `id` e `dialog`, que serão obtidas através do endppoint relativo às quotes.
 
 [^1]: Por razões de desempenho, neste momento, os testes de integração não estão a ser executados no github.

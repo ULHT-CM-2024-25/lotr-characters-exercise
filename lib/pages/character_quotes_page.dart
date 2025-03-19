@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CharactersListPage extends StatelessWidget {
-  const CharactersListPage({super.key});
+class CharacterQuotesPage extends StatelessWidget {
+  const CharacterQuotesPage({super.key});
 
   @override
   Widget build(BuildContext context) {
