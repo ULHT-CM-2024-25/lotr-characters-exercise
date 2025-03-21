@@ -262,6 +262,32 @@ void main() {
     }
     );
   });
+
+  /**
+   * Testa se aparece um circularprogressindicator enquanto não recebe resposta do servidor
+   */
+  testWidgets('Show circular progress indicator while loading characters list', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      Provider<CharactersRepository>(
+        create: (_) => FakeCharactersRepository(client: HttpClient(), delay: 1),
+        child: const MyApp(),
+      ),
+    );
+
+    expectKey(keyCharactersListPage);
+
+    await tester.tap(find.byExpectedKey(keyGetCharactersButton));
+    await tester.pump();
+
+    expect(find.byType(CircularProgressIndicator), findsOneWidget);
+
+    // wait for the response
+    await tester.pumpAndSettle(Duration(seconds: 1));
+
+    expect(find.byType(CircularProgressIndicator), findsNothing);
+    expectKey(keyCharactersListPage);
+    expectKey(keyCharactersList);
+  });
 }
 
 /// Helpers

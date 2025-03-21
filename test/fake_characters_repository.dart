@@ -34,10 +34,16 @@ class FakeCharactersRepository extends CharactersRepository {
     ),
   ];
 
-  FakeCharactersRepository({required super.client});
+  final int? delay;
+
+  FakeCharactersRepository({required super.client, this.delay});
 
   @override
-  Future<List<Character>> getCharacters() {
+  Future<List<Character>> getCharacters() async {
+    if (delay != null) {
+      await Future.delayed(Duration(seconds: delay!));
+    }
+
     return Future.value(characters);
   }
 
