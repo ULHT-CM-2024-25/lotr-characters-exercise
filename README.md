@@ -60,7 +60,7 @@ Deves desenvolver a aplicação tendo em conta estes pressupostos, até que ela:
 * Tenha o aspeto e comportamento apresentado na demonstração acima
 * Passe os testes (unitários e integração) mas também o [dart analyze](https://dart.dev/tools/dart-analyze) que pode ser executado localmente através do comando `dart analyze` na consola do Android Studio
 
-Este exercício pressupõe que sabes usar o `Provider` sabes como consumir uma API REST e sabes tirar partido do `FutureBuilder` para mostrar um `CircularProgressIndicator` enquando está à espera
+Este exercício pressupõe que sabes usar o `Provider`, sabes como consumir uma API REST e sabes tirar partido do `FutureBuilder` para mostrar um `CircularProgressIndicator` enquanto a aplicação está à espera
 de resposta do servidor. Tudo isso foi explicado na playlist indicada no início do enunciado.
 
 Pressupõe também que sabes o que são testes de integração e a importância do `Provider` para esses testes. Essa parte está explicada
