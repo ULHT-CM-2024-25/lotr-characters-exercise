@@ -24,6 +24,10 @@ final keyCharacterQuotesEmpty = Key('characters-quotes-empty');
 final keyCharacterQuotesList = Key('characters-quotes-list');
 
 void main() {
+  runWidgetTests();
+}
+
+void runWidgetTests() {
   /**
    * Testa se o title da lista de personagens é <nome> - <raça>
    */
