@@ -290,7 +290,7 @@ void runWidgetTests() {
   /**
    * Testa se aparece um circularprogressindicator enquanto não recebe resposta do servidor
    */
-  testWidgets('Show circular progress indicator while loading characters list', (WidgetTester tester) async {
+  testWidgets('Mostra indicador de progresso enquanto carrega lista de personagens', (WidgetTester tester) async {
     await tester.pumpWidget(
       Provider<CharactersRepository>(
         create: (_) => FakeCharactersRepository(client: HttpClient(), delay: 1),
