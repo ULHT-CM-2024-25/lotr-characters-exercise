@@ -22,7 +22,77 @@ jobs:
         run: flutter pub get
 
       - name: Dart Analyze check
-        run: dart analyze
+        id: dart_analyze
+        uses: education/autograding-command-grader@v1
+        with:
+          test-name: Dart Analyze check
+          command: dart analyze
+          timeout: 10
+          max-score: 1
 
-      - name: Automated Tests check
-        run: flutter test
+      - name: Test 1
+        id: test1
+        uses: education/autograding-command-grader@v1
+        with:
+          test-name: Titulo dos elementos da lista de personagens
+          command: flutter test --name "Titulo dos elementos da lista de personagens"
+          timeout: 10
+          max-score: 1
+
+      - name: Test 2
+        id: test2
+        uses: education/autograding-command-grader@v1
+        with:
+          test-name: Data de falecimento
+          command: flutter test --name "Data de falecimento"
+          timeout: 10
+          max-score: 1
+
+      - name: Test 3
+        id: test3
+        uses: education/autograding-command-grader@v1
+        with:
+          test-name: Consulta quotes - nomes dos personagens
+          command: flutter test --name "Consulta quotes - nomes dos personagens"
+          timeout: 10
+          max-score: 1
+
+      - name: Test 4
+        id: test4
+        uses: education/autograding-command-grader@v1
+        with:
+          test-name: Consulta quotes - dialogos
+          command: flutter test --name "Consulta quotes - dialogos"
+          timeout: 10
+          max-score: 1
+
+      - name: Test 5
+        id: test5
+        uses: education/autograding-command-grader@v1
+        with:
+          test-name: Mostra indicador de progresso enquanto carrega lista de personagens
+          command: flutter test --name "Mostra indicador de progresso enquanto carrega lista de personagens"
+          timeout: 10
+          max-score: 1
+
+      - name: Test 6
+        id: test6
+        uses: education/autograding-command-grader@v1
+        with:
+          test-name: Character toString
+          command: flutter test --name "toString"
+          timeout: 10
+          max-score: 1
+
+      - name: Autograding Reporter
+        uses: classroom-resources/autograding-grading-reporter@v1
+        with:
+          runners: dart_analyze,test1,test2,test3,test4,test5,test6
+        env:
+          DART_ANALYZE_RESULTS: ${{ steps.dart_analyze.outputs.result }}
+          TEST1_RESULTS: ${{ steps.test1.outputs.result }}
+          TEST2_RESULTS: ${{ steps.test2.outputs.result }}
+          TEST3_RESULTS: ${{ steps.test3.outputs.result }}
+          TEST4_RESULTS: ${{ steps.test4.outputs.result }}
+          TEST5_RESULTS: ${{ steps.test5.outputs.result }}
+          TEST6_RESULTS: ${{ steps.test6.outputs.result }}
